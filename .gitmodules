@@ -2,3 +2,7 @@
 	path = netjsonconfig
 	url = git@github.com:Aryamanz29/netjsonconfig.git
 	branch = zerotier-proto
+[submodule "openwisp-controller"]
+	path = openwisp-controller
+	url = git@github.com:Aryamanz29/openwisp-controller.git
+	branch = zerotier-proto
