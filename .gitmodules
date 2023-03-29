@@ -10,3 +10,7 @@
 	path = netdiff
 	url = git@github.com:Aryamanz29/netdiff.git
 	branch = zerotier-proto
+[submodule "openwisp-network-topology"]
+	path = openwisp-network-topology
+	url = git@github.com:Aryamanz29/openwisp-network-topology.git
+	branch = zerotier-proto
