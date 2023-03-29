@@ -1,0 +1,4 @@
+[submodule "netjsonconfig"]
+	path = netjsonconfig
+	url = git@github.com:Aryamanz29/netjsonconfig.git
+	branch = zerotier-proto
