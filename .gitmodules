@@ -1,16 +1,16 @@
 [submodule "netjsonconfig"]
 	path = netjsonconfig
 	url = git@github.com:Aryamanz29/netjsonconfig.git
-	branch = zerotier-proto
+	branch = zerotier-prototype
 [submodule "openwisp-controller"]
 	path = openwisp-controller
 	url = git@github.com:Aryamanz29/openwisp-controller.git
-	branch = zerotier-proto
+	branch = zerotier-prototype
 [submodule "netdiff"]
 	path = netdiff
 	url = git@github.com:Aryamanz29/netdiff.git
-	branch = zerotier-proto
+	branch = zerotier-prototype
 [submodule "openwisp-network-topology"]
 	path = openwisp-network-topology
 	url = git@github.com:Aryamanz29/openwisp-network-topology.git
-	branch = zerotier-proto
+	branch = zerotier-prototype

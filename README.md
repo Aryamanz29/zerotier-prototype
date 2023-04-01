@@ -10,12 +10,12 @@
 
 - If you encounter any issues while playing the demo video files in this `README`, please consider switching to a chromium-based browser to play them without any errors.
 
-- The prototype code for the following repositories can be found in my `zerotier-proto` branch of my fork repository.
+- The prototype code for the following repositories can be found in my `zerotier-prototype` branch of my fork repository.
 
 - **For eg**
   ```bash
   git clone git@github.com:Aryamanz29/<OPENWISP_REPO_NAME_HERE>.git
-  git checkout zerotier-proto
+  git checkout zerotier-prototype
   ```
 
 ![-------------------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -31,36 +31,36 @@
   
     **Steps:**
 
-    - We can extend the Zerotier converter for OpenWrt backend in [openwrt/converters/zerotier.py](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-proto/netjsonconfig/backends/openwrt/converters/zerotier.py)
+    - We can extend the Zerotier converter for OpenWrt backend in [openwrt/converters/zerotier.py](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-prototype/netjsonconfig/backends/openwrt/converters/zerotier.py)
   
     - The extended Zerotier converter configuration syntax logic is written as per [openwrt zerotier package](https://github.com/mwarning/zerotier-openwrt/wiki).
 
     - Added basic unit tests for the OpenWrt backend renderer and parsers. 
   
-    - **Note:** Currently the [zerotier/schema.py](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-proto/netjsonconfig/backends/zerotier/schema.py) only supports limited properties required for running this prototype, we can change this later on.
+    - **Note:** Currently the [zerotier/schema.py](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-prototype/netjsonconfig/backends/zerotier/schema.py) only supports limited properties required for running this prototype, we can change this later on.
 
 
   - [x] Added a Zerotier backend that generates network configuration accepted by REST API endpoints of the ZeroTier Controller.
 
     **Steps:**
 
-    - We can a schema for the [Zerotier backend](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-proto/netjsonconfig/backends/zerotier/zerotier.py) that is based on Zerotier controller [OpenAPI specification](https://docs.zerotier.com/openapi/servicev1.json).
+    - We can a schema for the [Zerotier backend](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-prototype/netjsonconfig/backends/zerotier/zerotier.py) that is based on Zerotier controller [OpenAPI specification](https://docs.zerotier.com/openapi/servicev1.json).
     
     - Now, according to the given schema, the `netjsonconfig.backends.zerotier` converter, parser, template, and renderer logic is written.
     
-    - Added logic for automatic [generation of clients](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-proto/netjsonconfig/backends/zerotier/zerotier.py#L16-L18) similar to **OpenVPN** and **Wireguard** in the Zerotier VPN backend that is later used by OpenWISP Controller config templates.
+    - Added logic for automatic [generation of clients](https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-prototype/netjsonconfig/backends/zerotier/zerotier.py#L16-L18) similar to **OpenVPN** and **Wireguard** in the Zerotier VPN backend that is later used by OpenWISP Controller config templates.
     
     - Added basic unit tests for the Zerotier backend renderer and parsers.
 
 - #### **Prototype Code:** 
   
-  - https://github.com/Aryamanz29/netjsonconfig/tree/zerotier-proto
+  - https://github.com/Aryamanz29/netjsonconfig/tree/zerotier-prototype
   
   - **Unittests**
         
-    - OpenWRT backend: https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-proto/tests/openwrt/test_zerotier.py
+    - OpenWRT backend: https://github.com/Aryamanz29/netjsonconfig/blob/zerotier-prototype/tests/openwrt/test_zerotier.py
     
-    - Zerotier backend: https://github.com/Aryamanz29/netjsonconfig/tree/zerotier-proto/tests/zerotier   
+    - Zerotier backend: https://github.com/Aryamanz29/netjsonconfig/tree/zerotier-prototype/tests/zerotier
 
 #### **Prototype Demo:**
 
@@ -119,7 +119,7 @@ print(dumps(o4, indent=4))
 ```
 
 ```bash
-(env) ➜  tests git:(zerotier-proto) ✗ py -m unittest test_zerotier.py
+(env) ➜  tests git:(zerotier-prototype) ✗ py -m unittest test_zerotier.py
 ---- Zerotier Backend : Network Configuration -----
 
 # zerotier config: 79vgjhks7ae448c5
@@ -179,7 +179,7 @@ OK
     
     **Steps:**
 
-    - We can add a [new VPN backend](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-proto/openwisp_controller/vpn_backends.py#L75-L81) by extending netjonconfig Zerotier backend.
+    - We can add a [new VPN backend](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-prototype/openwisp_controller/vpn_backends.py#L75-L81) by extending netjonconfig Zerotier backend.
 
     - VPN backend schema should be similar to what we defined in `netjsonconfig`.
 
@@ -189,7 +189,7 @@ OK
 
     **Steps:**
 
-    - To accomplish this, we can create a new Python class or API view class in the [config/api/zerotier_central_api.py](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-proto/openwisp_controller/config/api/zerotier_central_api.py) file that we can use to manage ZeroTier networks through OpenWISP.
+    - To accomplish this, we can create a new Python class or API view class in the [config/api/zerotier_central_api.py](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-prototype/openwisp_controller/config/api/zerotier_central_api.py) file that we can use to manage ZeroTier networks through OpenWISP.
 
     - This class will enable us to perform CRUD operations on networks, members, and other relevant information.
 
@@ -217,7 +217,7 @@ OK
 
     - At present, the prototype only handles public Zerotier networks. In order to allow for private networks, it is necessary to authorize each member node with Zerotier once it has joined the network. One potential solution is to use OpenWISP to create Zerotier client identities in advance using the [`zerotier-idtool`](https://github.com/zerotier/ZeroTierOne/blob/dev/doc/zerotier-idtool.1.md). Then, when applying the template to an OpenWRT device, device configuration variables (which include the Zerotier secret key) and file configuration can be utilized to add the contents of the Zerotier identities to the device.
 
-    - After creating the Zerotier identities and extracting the `member_id` using the `identity.secret`, we can use the [ZerotierCentralAPI](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-proto/openwisp_controller/config/api/zerotier_central_api.py) class to make a call to the endpoint `https://my.zerotier.com/api/v1/network/{network_id}/member/{member_id}` with a JSON payload of `{"config": {"authorized": true}}`. This will authorize the private member in the Zerotier network.
+    - After creating the Zerotier identities and extracting the `member_id` using the `identity.secret`, we can use the [ZerotierCentralAPI](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-prototype/openwisp_controller/config/api/zerotier_central_api.py) class to make a call to the endpoint `https://my.zerotier.com/api/v1/network/{network_id}/member/{member_id}` with a JSON payload of `{"config": {"authorized": true}}`. This will authorize the private member in the Zerotier network.
 
     - Using [zerotier-idtool](https://github.com/zerotier/ZeroTierOne/blob/dev/doc/zerotier-idtool.1.md) to generate zerotier identities.
       
@@ -250,7 +250,7 @@ OK
             ZerotierCentralAPI(instance.host, instance.auth_token).delete_network(network_id)
     ```
 
-- #### **Prototype Code:** https://github.com/Aryamanz29/openwisp-controller/tree/zerotier-proto
+- #### **Prototype Code:** https://github.com/Aryamanz29/openwisp-controller/tree/zerotier-prototype
 
 #### **Prototype Demo:**
 
@@ -266,9 +266,9 @@ https://user-images.githubusercontent.com/56113566/229103195-8e284223-7521-4778-
 
     **Steps:**
 
-    - We can obtain information about the peers of devices in a network by using either the command `zerotier-cli peers -j` or the [ZerotierCentralAPI](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-proto/openwisp_controller/config/api/zerotier_central_api.py) client of the `openwisp-controller`, which consumes the [zerotier peers endpoints](https://docs.zerotier.com/service/v1/#operation/getPeers).
+    - We can obtain information about the peers of devices in a network by using either the command `zerotier-cli peers -j` or the [ZerotierCentralAPI](https://github.com/Aryamanz29/openwisp-controller/blob/zerotier-prototype/openwisp_controller/config/api/zerotier_central_api.py) client of the `openwisp-controller`, which consumes the [zerotier peers endpoints](https://docs.zerotier.com/service/v1/#operation/getPeers).
     
-    - We can implement the [ZerotierParser](https://github.com/Aryamanz29/netdiff/blob/zerotier-proto/netdiff/parsers/zerotier.py) by extending the **netdiff** `BaseParser`.
+    - We can implement the [ZerotierParser](https://github.com/Aryamanz29/netdiff/blob/zerotier-prototype/netdiff/parsers/zerotier.py) by extending the **netdiff** `BaseParser`.
     
     - Currently, the parsing logic is very simple. For every Zerotier peer with any role, a node is added to the graph instance along with other Zerotier peer properties. It's worth noting that we may make changes to this approach in the future.
 
@@ -288,9 +288,9 @@ https://user-images.githubusercontent.com/56113566/229103195-8e284223-7521-4778-
 
   - #### **Prototype Code:**
    
-    - https://github.com/Aryamanz29/netdiff/tree/zerotier-proto
+    - https://github.com/Aryamanz29/netdiff/tree/zerotier-prototype
     
-    - https://github.com/Aryamanz29/openwisp-network-topology/tree/zerotier-proto
+    - https://github.com/Aryamanz29/openwisp-network-topology/tree/zerotier-prototype
 
 #### **Prototype Demo:**
 
