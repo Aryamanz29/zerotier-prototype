@@ -173,6 +173,12 @@ OK
 
 ### `openwisp-controller`
 
+#### **Prototype Demo:**
+
+
+https://user-images.githubusercontent.com/56113566/229542857-dbc1886d-20f8-4794-abf0-7a6473710fd4.mp4
+
+
 - #### **Prototype Implementations:**
 
   - [x] Added a new Zerotier VPN backend.
@@ -252,13 +258,14 @@ OK
 
 - #### **Prototype Code:** https://github.com/Aryamanz29/openwisp-controller/tree/zerotier-prototype
 
-#### **Prototype Demo:**
-
-https://user-images.githubusercontent.com/56113566/229103195-8e284223-7521-4778-bd0e-1f10e5c80193.mp4
-
 ![-------------------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### `netdiff and openwisp-network-topoloy`
+
+#### **Prototype Demo:**
+
+https://user-images.githubusercontent.com/56113566/229118545-055bb360-8eac-49e2-9b3a-0b7003426154.mp4
+
 
 - #### **Prototype Implementations:**
 
@@ -291,9 +298,5 @@ https://user-images.githubusercontent.com/56113566/229103195-8e284223-7521-4778-
     - https://github.com/Aryamanz29/netdiff/tree/zerotier-prototype
     
     - https://github.com/Aryamanz29/openwisp-network-topology/tree/zerotier-prototype
-
-#### **Prototype Demo:**
-
-https://user-images.githubusercontent.com/56113566/229118545-055bb360-8eac-49e2-9b3a-0b7003426154.mp4
 
 ![-------------------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
